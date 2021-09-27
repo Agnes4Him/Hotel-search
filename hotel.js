@@ -236,11 +236,13 @@ var eachHotelImage = "";
 var hotelInfoElements = "";
 var currentPage = 0;
 var nextPage = 0;
+var long_lat_key = process.env.LONG_LAT_API_KEY;
+var hotel_info_key = process.env.HOTEL_INFO_API_KEY;
     
    
     $.ajax({
 
-      url:"https://maps.googleapis.com/maps/api/geocode/json?address=" + encodeURIComponent(address) + "&key=AIzaSyCx6vBx952ygvbaqdEOtOp_lfne3aDc4b0",
+      url:"https://maps.googleapis.com/maps/api/geocode/json?address=" + encodeURIComponent(address) + "&key=" + long_lat_key,
       type:"GET",
       success:function(response) {
       
@@ -273,7 +275,7 @@ var nextPage = 0;
           "method": "GET",
           "headers": {
             "x-rapidapi-host": "hotels-com-free.p.rapidapi.com",
-            "x-rapidapi-key": "ccd34309dfmsh1cf7655921fa515p10f82cjsnd1a1740cf176"
+            "x-rapidapi-key": hotel_info_key
       
           }
       
@@ -417,6 +419,8 @@ var nextPage = 0;
 
       var modal = $(".modal");
 
+      var hotel_info_key = process.env.HOTEL_INFO_API_KEY;
+
       $(".getHotelName").html(hname);
 
       const roomsDetails = {
@@ -426,7 +430,7 @@ var nextPage = 0;
         "method": "GET",
         "headers": {
           "x-rapidapi-host": "hotels-com-free.p.rapidapi.com",
-          "x-rapidapi-key": "ccd34309dfmsh1cf7655921fa515p10f82cjsnd1a1740cf176"
+          "x-rapidapi-key": hotel_info_key
         }
       };
       
