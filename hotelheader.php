@@ -46,7 +46,7 @@ if($_GET['function'] == "logout") {
 
       <div class="brand">
 
-        <a href="hotelhome.php"><i class="fas fa-home"></i><span class="brand-name">FindHotels</span></a>
+        <a href="index.php"><i class="fas fa-home"></i><span class="brand-name">FindHotels</span></a>
 
       </div>
 
