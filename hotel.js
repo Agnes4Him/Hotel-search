@@ -46,7 +46,7 @@ $("#submit").click(function(e) {
 
         $("#errorMessage").hide();
 
-        window.location.assign("http://localhost:8888/portfolio_projects/hotel/hotelhome.php");
+        setTimeout('window.location.assign("http://localhost:8888/portfolio_projects/hotel/hotelhome.php")', 2000);
 
       }else if(result == "2") {
 
@@ -54,7 +54,7 @@ $("#submit").click(function(e) {
 
         $("#errorMessage").hide();
 
-        window.location.assign("http://localhost:8888/portfolio_projects/hotel/hotelhome.php");
+       setTimeout('window.location.assign("http://localhost:8888/portfolio_projects/hotel/hotelhome.php")', 2000);
 
       }else {
 
@@ -106,13 +106,21 @@ $(".downButton").click(function() {
 
 $(".checkinDate").click(function() {
 
-  $(".checkinDate").datepicker();
+  $(".checkinDate").datepicker({
+
+            todayHighlight: true,
+            autoclose: true
+  });
 
 })
 
 $(".checkoutDate").click(function() {
 
-  $(".checkoutDate").datepicker();
+  $(".checkoutDate").datepicker({
+
+            todayHighlight: true,
+            autoclose: true
+  });
   
 })
 
