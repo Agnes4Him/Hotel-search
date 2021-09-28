@@ -137,6 +137,8 @@ $(".adultNumber").change(function() {
 
 $("#locale").click(function() {
 
+  var hotel_info_key = process.env.HOTEL_INFO_API_KEY;
+
   const metadata = {
     "async": true,
     "crossDomain": true,
@@ -144,7 +146,7 @@ $("#locale").click(function() {
     "method": "GET",
     "headers": {
       "x-rapidapi-host": "hotels4.p.rapidapi.com",
-      "x-rapidapi-key": "ccd34309dfmsh1cf7655921fa515p10f82cjsnd1a1740cf176"
+      "x-rapidapi-key": hotel_info_key
     }
   };
   
