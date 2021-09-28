@@ -46,7 +46,7 @@ $("#submit").click(function(e) {
 
         $("#errorMessage").hide();
 
-        setTimeout('window.location.assign("http://localhost:8888/portfolio_projects/hotel/index.php")', 1500);
+        setTimeout('window.location.assign("/index.php")', 1500);
 
       }else if(result == "2") {
 
@@ -54,7 +54,7 @@ $("#submit").click(function(e) {
 
         $("#errorMessage").hide();
 
-       setTimeout('window.location.assign("http://localhost:8888/portfolio_projects/hotel/index.php")', 1500);
+       setTimeout('window.location.assign("/index.php")', 1500);
 
       }else {
 
