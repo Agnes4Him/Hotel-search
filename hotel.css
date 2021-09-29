@@ -770,6 +770,13 @@ footer{
     width:50vw;
   }
 
+
+  .home-section-5 img {
+
+    width:45%;
+    margin-top:2rem;
+  }
+
 }
 
 @media screen and (max-width:995px) {
