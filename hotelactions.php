@@ -109,7 +109,7 @@ if($error != "") {
 
 }
 
-if($_GET['actions'] == "getkeys") {
+if($_GET['action'] == "getkeys") {
 
   require_once('vendor/autoload.php');
 

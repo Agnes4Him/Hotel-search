@@ -68,9 +68,9 @@ $("#submit").click(function(e) {
   })
 })
 
-var long_lat_key;
+var long_lat_key = "";
 
-var hotel_info_key;
+var hotel_info_key = "";
 
 document.load(function() {
 
