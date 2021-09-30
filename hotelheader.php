@@ -30,7 +30,7 @@ if($_GET['function'] == "logout") {
       
   <link href="jquery-ui/jquery-ui.css" rel="stylesheet">
 
-  <link href="hotel.css" rel="styesheet">
+  <link href="hotel.css" rel="stylesheet">
 
   <script src="https://kit.fontawesome.com/539b4db01a.js" crossorigin="anonymous"></script>
 
