@@ -109,6 +109,24 @@ if($error != "") {
 
 }
 
+if($_GET['actions'] == "getkeys") {
+
+  require_once('vendor/autoload.php');
+
+  $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+
+  $dotenv->load();
+
+  $long_lat = $_ENV['LONG_LAT_API_KEY'];
+
+  echo $long_lat;
+
+  $hotel_info = $_ENV['HOTEL_INFO_API_KEY'];
+
+  echo $hotel_info;
+
+}
+
 $newslettererror = "";
 
 if($_GET['action'] == "newsletter") {

@@ -1,3 +1,5 @@
+
+
 $(".toggle-link").click(function() {
 
   if($("#signup").val() == "1") {
@@ -62,6 +64,32 @@ $("#submit").click(function(e) {
 
         $("#successMessage").hide();
       }
+    }
+  })
+})
+
+var long_lat_key;
+
+var hotel_info_key;
+
+document.load(function() {
+
+  $.ajax({
+
+    method:"GET",
+    url:"hotelactions.php?action=getkeys",
+    success:function(result){
+
+     if(result == "<?php echo $long_lat; ?>") {
+
+      long_lat_key = "<?php echo $long_lat; ?>";
+
+     }else if(result == "<?php echo $hotel_info; ?>") {
+
+      hotel_info_key = "<?php echo $hotel_info; ?>";
+
+     }
+
     }
   })
 })
@@ -136,8 +164,6 @@ $(".adultNumber").change(function() {
 //Get locale 
 
 $("#locale").click(function() {
-
-  var hotel_info_key = process.env.HOTEL_INFO_API_KEY;
 
   const metadata = {
     "async": true,
@@ -246,8 +272,6 @@ var eachHotelImage = "";
 var hotelInfoElements = "";
 var currentPage = 0;
 var nextPage = 0;
-var long_lat_key = process.env.LONG_LAT_API_KEY;
-var hotel_info_key = process.env.HOTEL_INFO_API_KEY;
     
    
     $.ajax({
@@ -428,8 +452,6 @@ var hotel_info_key = process.env.HOTEL_INFO_API_KEY;
       var bookingElements = "";
 
       var modal = $(".modal");
-
-      var hotel_info_key = process.env.HOTEL_INFO_API_KEY;
 
       $(".getHotelName").html(hname);
 
