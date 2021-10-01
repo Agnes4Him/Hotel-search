@@ -72,7 +72,7 @@ var long_lat_key = "";
 
 var hotel_info_key = "";
 
-$(document).load(function() {
+$(window).on('load', function() {
 
   $.ajax({
 
