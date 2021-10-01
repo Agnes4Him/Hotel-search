@@ -109,6 +109,10 @@ if($error != "") {
 
 }
 
+$long_lat;
+
+$hotel_info;
+
 if($_GET['action'] == "getkeys") {
 
   require_once('vendor/autoload.php');
