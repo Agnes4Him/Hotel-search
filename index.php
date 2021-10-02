@@ -279,7 +279,7 @@ var long_lat_key = "";
 
 var hotel_info_key = "";
 
-$(document).on('load', function() {
+$(window).on('load', function() {
 
   $.ajax({
 
@@ -301,40 +301,7 @@ $(document).on('load', function() {
   })
 })
 
-$(".downButton").click(function() {
 
-  $(".dropdownBox").toggle();
-
-})
-
-$(".checkinDate").click(function() {
-
-  $(".checkinDate").datepicker({
-
-            todayHighlight: true,
-            autoclose: true
-  });
-
-})
-
-$(".checkoutDate").click(function() {
-
-  $(".checkoutDate").datepicker({
-
-            todayHighlight: true,
-            autoclose: true
-  });
-  
-})
-
-
-$(".adultNumber").change(function() {
-
-  var adultNumber = $(".adultNumber").val();
-
-  $(".bookingDetails").val(adultNumber); // adults number changed to room number
-
-})
 
 //Get locale 
 
