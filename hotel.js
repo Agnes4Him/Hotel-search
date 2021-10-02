@@ -68,31 +68,6 @@ $("#submit").click(function(e) {
   })
 })
 
-var long_lat_key = "";
-
-var hotel_info_key = "";
-
-$(window).on('load', function() {
-
-  $.ajax({
-
-    method:"GET",
-    url:"hotelactions.php?action=getkeys",
-    success:function(result){
-
-     if(result == "<?php echo $long_lat; ?>") {
-
-      long_lat_key = "<?php echo $long_lat; ?>";
-
-     }else if(result == "<?php echo $hotel_info; ?>") {
-
-      hotel_info_key = "<?php echo $hotel_info; ?>";
-
-     }
-
-    }
-  })
-})
 
 $("#newsletterSubmit").click(function(e) {
 
