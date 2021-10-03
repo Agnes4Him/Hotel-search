@@ -109,9 +109,9 @@ if($error != "") {
 
 }
 
-$long_lat;
+$arr;
 
-$hotel_info;
+$encodedarr;
 
 if($_GET['action'] == "getkeys") {
 
@@ -121,13 +121,11 @@ if($_GET['action'] == "getkeys") {
 
   $dotenv->load();
 
-  $long_lat = $_ENV['LONG_LAT_API_KEY'];
+  $arr=getenv();
 
-  echo $long_lat;
+  $encodedarr = json_encode($arr);
 
-  $hotel_info = $_ENV['HOTEL_INFO_API_KEY'];
-
-  echo $hotel_info;
+  echo $encodedarr;
 
 }
 
