@@ -121,7 +121,7 @@ if($_GET['action'] == "getkeys") {
 
   $dotenv->load();
 
-  $arr=getenv();
+  $arr = getenv();
 
   $encodedarr = json_encode($arr);
 
