@@ -93,9 +93,11 @@ $(window).on('load', function() {
         } else if(key == 'HOTEL_INFO_API_KEY') {
 
           hotel_info_key = value;
-          
+
         }
       })
+
+      alert(long_lat_key);
 
       /*long_lat_key = envResult['LONG_LAT_API_KEY'];
 
