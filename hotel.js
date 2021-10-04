@@ -68,7 +68,7 @@ $("#submit").click(function(e) {
   })
 })
 
-var envResult = "";
+var envResult = [];
 
 var long_lat_key = "";
 
@@ -84,9 +84,9 @@ $(window).on('load', function() {
 
       envResult = JSON.parse(result);
 
-      long_lat_key = envResult.LONG_LAT_API_KEY;
+      long_lat_key = envResult['LONG_LAT_API_KEY'];
 
-      hotel_info_key = envResult.HOTEL_INFO_API_KEY;
+      hotel_info_key = envResult['HOTEL_INFO_API_KEY'];
       
     }
   })
