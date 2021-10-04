@@ -151,7 +151,7 @@ $("#locale").click(function() {
   $.ajax({
 
     method:"GET",
-    url:"hotelactions.php?action=getkeys",
+    url:"hotelconnection.php?action=getkeys",
     success:function(result){
 
       envResult = JSON.parse(result);
@@ -162,15 +162,13 @@ $("#locale").click(function() {
 
           long_lat_key = value;
 
-        } else if(key == 'HOTEL_INFO_API_KEY') {
+        }else if(key == 'HOTEL_INFO_API_KEY') {
 
           hotel_info_key = value;
 
         }
 
       })
-
-      alert(hotel_info_key);
 
       const metadata = {
         "async": true,

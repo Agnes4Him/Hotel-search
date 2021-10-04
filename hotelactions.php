@@ -109,21 +109,7 @@ if($error != "") {
 
 }
 
-if($_GET['action'] == "getkeys") {
 
-  require_once('vendor/autoload.php');
-
-  $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-
-  $dotenv->load();
-
-  $arr = $_ENV();
-
-  $encodedarr = json_encode($arr);
-
-  echo $encodedarr;
-
-}
 
 $newslettererror = "";
 
