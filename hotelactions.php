@@ -109,11 +109,6 @@ if($error != "") {
 
 }
 
-
-$arr;
-
-$encodedarr;
-
 if($_GET['action'] == "getkeys") {
 
   require_once('vendor/autoload.php');

@@ -84,9 +84,22 @@ $(window).on('load', function() {
 
       envResult = JSON.parse(result);
 
-      long_lat_key = envResult['LONG_LAT_API_KEY'];
+      $.each(envResult, function(key, value) {
 
-      hotel_info_key = envResult['HOTEL_INFO_API_KEY'];
+        if(key == 'LONG_LAT_API_KEY') {
+
+          long_lat_key = value;
+
+        } else if(key == 'HOTEL_INFO_API_KEY') {
+
+          hotel_info_key = value;
+          
+        }
+      })
+
+      /*long_lat_key = envResult['LONG_LAT_API_KEY'];
+
+      hotel_info_key = envResult['HOTEL_INFO_API_KEY']; */
       
     }
   })
