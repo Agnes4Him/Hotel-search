@@ -68,44 +68,7 @@ $("#submit").click(function(e) {
   })
 })
 
-var envResult = [];
 
-var long_lat_key = "";
-
-var hotel_info_key = "";
-
-$(window).on('load', function() {
-
-  $.ajax({
-
-    method:"GET",
-    url:"hotelactions.php?action=getkeys",
-    success:function(result){
-
-      envResult = JSON.parse(result);
-
-      $.each(envResult, function(key, value) {
-
-        if(key == 'LONG_LAT_API_KEY') {
-
-          long_lat_key = value;
-
-        } else if(key == 'HOTEL_INFO_API_KEY') {
-
-          hotel_info_key = value;
-
-        }
-      })
-
-      alert(long_lat_key);
-
-      /*long_lat_key = envResult['LONG_LAT_API_KEY'];
-
-      hotel_info_key = envResult['HOTEL_INFO_API_KEY']; */
-      
-    }
-  })
-})
 
 
 $("#newsletterSubmit").click(function(e) {
@@ -177,33 +140,67 @@ $(".adultNumber").change(function() {
 
 //Get locale 
 
+var envResult = [];
+
+var long_lat_key = "";
+
+var hotel_info_key = "";
+
 $("#locale").click(function() {
 
-  const metadata = {
-    "async": true,
-    "crossDomain": true,
-    "url": "https://hotels4.p.rapidapi.com/get-meta-data",
-    "method": "GET",
-    "headers": {
-      "x-rapidapi-host": "hotels4.p.rapidapi.com",
-      "x-rapidapi-key": hotel_info_key
-    }
-  };
-  
-  $.ajax(metadata).done(function (response) {
+  $.ajax({
 
-    $.each(response, function(key, value) {
+    method:"GET",
+    url:"hotelactions.php?action=getkeys",
+    success:function(result){
 
-      $("#localeList").append('<table id="localeTable"><tr class="eachLocale"><th>' + value['name'] + '</th><td class="rowLocale">' + value['hcomLocale'] +'</td></tr></table>');
+      envResult = JSON.parse(result);
+
+      $.each(envResult, function(key, value) {
+
+        if(key == 'LONG_LAT_API_KEY') {
+
+          long_lat_key = value;
+
+        } else if(key == 'HOTEL_INFO_API_KEY') {
+
+          hotel_info_key = value;
+
+        }
+
+      })
+
+      alert(hotel_info_key);
+
+      const metadata = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://hotels4.p.rapidapi.com/get-meta-data",
+        "method": "GET",
+        "headers": {
+          "x-rapidapi-host": "hotels4.p.rapidapi.com",
+          "x-rapidapi-key": hotel_info_key
+        }
+      };
       
-    })
+      $.ajax(metadata).done(function (response) {
     
-  });
+        $.each(response, function(key, value) {
+    
+          $("#localeList").append('<table id="localeTable"><tr class="eachLocale"><th>' + value['name'] + '</th><td class="rowLocale">' + value['hcomLocale'] +'</td></tr></table>');
+          
+        })
+        
+      });
+    
+      $("#localeList").toggle();
 
-  $("#localeList").toggle();
+      }
+    
+    })
 
-})
-
+  })
+  
 
 $(document).on('click', '.eachLocale', function() {
 
