@@ -109,17 +109,17 @@ if($error != "") {
 
 }
 
+require_once('vendor/autoload.php');
+
+$dotenv = Dotenv\Dotenv::createUnsafeImmutable(__DIR__);
+
+$dotenv->load();
+
 $arr;
 
 $encodedarr;
 
 if($_GET['action'] == "getkeys") {
-
-  require_once('vendor/autoload.php');
-
-  $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-
-  $dotenv->load();
 
   $arr = getenv();
 
