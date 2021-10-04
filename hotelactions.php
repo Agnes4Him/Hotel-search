@@ -111,13 +111,13 @@ if($error != "") {
 
 if($_GET['action'] == "getkeys") {
 
-  require_once('/vendor/autoload.php');
+  require_once('vendor/autoload.php');
 
-  $dotenv = Dotenv\Dotenv::createUnsafeImmutable(__DIR__);
+  $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 
   $dotenv->load();
 
-  $arr = getenv();
+  $arr = $_ENV();
 
   $encodedarr = json_encode($arr);
 

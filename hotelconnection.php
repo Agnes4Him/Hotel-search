@@ -2,6 +2,12 @@
 
 /*Connection to local database
 
+require_once('vendor/autoload.php');
+
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+
+$dotenv->load();
+
 $link = mysqli_connect($host_name, $user_name, $password, $database_name);*/
 
  //Connection to heroku database 
