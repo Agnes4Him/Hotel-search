@@ -140,7 +140,7 @@ $(".adultNumber").change(function() {
 
 //Get locale 
 
-var envResult = [];
+//var envResult = [];
 
 var long_lat_key = "";
 
@@ -154,9 +154,9 @@ $("#locale").click(function() {
     url:"hotelactions.php?action=getkeys",
     success:function(result){
 
-      envResult = JSON.parse(result);
+      //envResult = JSON.parse(result);
 
-      $.each(envResult, function(key, value) {
+      $.each(JSON.parse(result), function(key, value) {
 
         if(key == 'LONG_LAT_API_KEY') {
 
