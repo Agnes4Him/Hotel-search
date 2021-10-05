@@ -165,13 +165,13 @@ if($_GET['action'] == "newsletter") {
   }
 }
 
-require_once('vendor/autoload.php');
-
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-
-$dotenv->load();
-
 if($_GET['action'] == "getkeys") {
+
+  require_once('vendor/autoload.php');
+
+  $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+
+  $dotenv->load();
 
   echo json_encode($_ENV);
 
