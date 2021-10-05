@@ -151,7 +151,7 @@ $("#locale").click(function() {
   $.ajax({
 
     method:"GET",
-    url:"hotelconnection.php?action=getkeys",
+    url:"hotelactions.php?action=getkeys",
     success:function(result){
 
       envResult = JSON.parse(result);

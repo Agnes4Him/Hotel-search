@@ -29,16 +29,4 @@ if(mysqli_connect_error()) {
   die("Unable to connect to database");
 }
 
-require_once('vendor/autoload.php');
-
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-
-$dotenv->load();
-
-if($_GET['action'] == "getkeys") {
-
-  echo json_encode($_ENV);
-
-} 
-
 ?>
