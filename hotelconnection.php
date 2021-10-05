@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /* Connection to local database
 
@@ -22,7 +22,7 @@ $link = mysqli_connect($host_name, $user_name, $password, $database_name); */
  $active_group = 'default';
  $query_builder = TRUE;
  // Connect to DB
- $link = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password, $cleardb_db);
+ $link = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password, $cleardb_db); 
 
 if(mysqli_connect_error()) {
 
