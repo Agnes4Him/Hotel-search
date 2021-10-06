@@ -167,7 +167,7 @@ if($_GET['action'] == "newsletter") {
 
 if($_GET['action'] == "getkeys") {
 
-  require_once('/vendor/autoload.php');
+  require_once('vendor/autoload.php');
 
   $dotenv = \Dotenv\Dotenv::createImmutable(__DIR__);
 
