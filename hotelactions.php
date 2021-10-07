@@ -173,7 +173,7 @@ if($_GET['action'] == "newsletter") {
 
   $dotenv->load();
 
-  echo json_encode($_ENV);
+  echo (json_encode($_ENV));
 
 }
 
