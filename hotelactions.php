@@ -1,4 +1,6 @@
-<?php 
+<?php
+
+use Dotenv\Dotenv;
 
 session_start();
 
@@ -167,13 +169,15 @@ if($_GET['action'] == "newsletter") {
 
  if($_GET['action'] == "getkeys") {
 
-  require_once(__DIR__ .'/vendor/autoload.php');
+  require_once('vendor/autoload.php');
 
-  $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ .'/.env');
+  $dotenv = \Dotenv\Dotenv::createImmutable(__DIR__ .'/.env');
 
   $dotenv->load();
 
-  echo (json_encode($_ENV));
+  $encodedKeys = json_encode($_ENV, true);
+
+  echo ($encodedKeys);
 
 }
 
